@@ -5,94 +5,190 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SkipaForm</title>
+  <meta name="description" content="SkipaForm – Website in Überarbeitung. Kontakt per E-Mail oder Telefon möglich.">
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #0d0d0d;
-      color: #ffffff;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    body {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
+      min-height: 100vh;
+      padding: 32px 20px;
     }
 
     .container {
-      max-width: 500px;
-      padding: 40px;
+      width: 100%;
+      max-width: 760px;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
     }
 
-    img {
-      max-width: 260px;
+    .logo-wrap {
       margin-bottom: 40px;
     }
 
+    .logo {
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+      opacity: 0.92;
+    }
+
+    .card {
+      display: inline-block;
+      width: 100%;
+      max-width: 620px;
+      padding: 40px 32px;
+      background: #ffffff;
+      border: 1px solid #e9e9e9;
+      border-radius: 20px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+    }
+
     h1 {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
+      margin: 0 0 16px 0;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #111111;
     }
 
-    p {
-      font-size: 16px;
-      color: #bfbfbf;
-      line-height: 1.6;
-      margin-bottom: 24px;
+    .lead {
+      margin: 0 auto 14px auto;
+      max-width: 540px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #444444;
     }
 
-    .contact {
+    .subtext {
+      margin: 0 auto 28px auto;
+      max-width: 540px;
       font-size: 15px;
-      color: #ffffff;
-    }
-
-    .contact a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
+      line-height: 1.7;
+      color: #6a6a6a;
     }
 
     .divider {
-      width: 40px;
-      height: 1px;
-      background: #333;
-      margin: 24px auto;
+      width: 64px;
+      height: 2px;
+      margin: 0 auto 28px auto;
+      background: #111111;
+      opacity: 0.12;
+      border-radius: 999px;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact a {
+      color: #111111;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      word-break: break-word;
+    }
+
+    .contact a:hover {
+      opacity: 0.72;
+      transform: translateY(-1px);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 13px;
+      color: #8a8a8a;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo {
+        max-width: 280px;
+      }
+
+      .card {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
+      .contact a {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-
-    <img src="logo.png" alt="SkipaForm Logo">
-
-    <h1>Website wird überarbeitet</h1>
-
-    <p>
-      Unsere Website befindet sich aktuell in Überarbeitung.<br>
-      Für Anfragen sind wir weiterhin direkt erreichbar.
-    </p>
-
-    <div class="divider"></div>
-
-    <div class="contact">
-      <div>
-        <a href="mailto:bertram.oswald@skipaform.de">
-          bertram.oswald@skipaform.de
-        </a>
-      </div>
-      <div style="margin-top:8px;">
-        <a href="tel:+4915238966480">
-          +49 1523 8966480
-        </a>
-      </div>
+    <div class="logo-wrap">
+      <img src="logo.png" alt="SkipaForm Logo" class="logo">
     </div>
 
+    <div class="card">
+      <h1>Website wird überarbeitet</h1>
+
+      <p class="lead">
+        Unsere Website befindet sich aktuell in Überarbeitung.
+        Für Anfragen, Projekte und allgemeine Rückfragen sind wir weiterhin direkt erreichbar.
+      </p>
+
+      <p class="subtext">
+        Sie können uns jederzeit per E-Mail oder telefonisch kontaktieren.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="contact">
+        <a href="mailto:bertram.oswald@skipaform.de">bertram.oswald@skipaform.de</a>
+        <a href="tel:+4915238966480">+49 1523 8966480</a>
+      </div>
+
+      <div class="footer-note">
+        SkipaForm
+      </div>
+    </div>
   </div>
 </body>
 </html>
